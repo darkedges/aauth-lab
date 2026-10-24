@@ -4,6 +4,10 @@
 
 The [Relay Biscuit lab](https://github.com/darkedges/biscuit-trust-lab) rebuilt on [AAuth](https://datatracker.ietf.org/doc/html/draft-hardt-oauth-aauth-protocol). It has the same operators, scenarios, budget rules and UI. Biscuit attenuation is replaced by AAuth's signed HTTP requests, person-server tokens and call chaining. Signatures, tokens and HTTP exchanges are real. Operators, work and credits are simulated.
 
+**Live demo:** [aauth.demos.darkedges.com](https://aauth.demos.darkedges.com)
+
+![Relay AAuth playground showing the agent network, credit ledger, the approved mission with per-hop auth tokens, and the identity and receiver checks for SearchCo](docs/playground-screenshot.png)
+
 See **[COMPARISON.md](COMPARISON.md)** for a side-by-side analysis of the two solutions.
 
 ## Run locally
