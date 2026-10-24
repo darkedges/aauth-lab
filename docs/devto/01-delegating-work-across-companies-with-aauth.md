@@ -11,6 +11,7 @@ tags: 'security, authorization, javascript, cloudflare'
 series: AAuth Network Lab
 cover_image: >-
   https://raw.githubusercontent.com/darkedges/aauth-lab/main/docs/playground-screenshot.png
+devto_id: 4912521
 ---
 
 Alice wants a piece of work done, and her organisation pays for it. She gives the job to her assistant, an AI agent. The assistant hands it to a coordinator, and the coordinator splits it between other companies. Some of those companies pass part of the job on again.
