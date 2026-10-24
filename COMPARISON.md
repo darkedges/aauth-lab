@@ -32,7 +32,7 @@ What differs is *where* each decision is made and *what it costs*.
 | Recorded exchanges / evaluations | 13 internal evaluations | 40 signed HTTP requests, including 14 `401` challenges |
 | Key-discovery fetches | 0 (root key pinned) | 23 (`.well-known` + JWKS) |
 | Credential the SearchCo call carries | 1,008-char Biscuit (3 blocks), plus ~3 KB of signed call and delegation envelopes the lab had to invent | 810-char auth token in `Signature-Key`, plus 94/103-char `Signature`/`Signature-Input` |
-| Mean run time (Node, in-process) | ~35 ms | ~130 ms |
+| Mean run time (Node, in-process) | ~35 ms | ~150 ms |
 
 Both labs run every party in one process, so these numbers count messages, not network latency. In a real deployment, every AAuth PS call and discovery fetch is a network round trip, and caching mitigates the discovery fetches.
 
