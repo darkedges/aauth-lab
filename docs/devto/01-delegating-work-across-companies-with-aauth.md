@@ -133,3 +133,4 @@ Signing and verification use the official libraries: `@aauth/agent` signs, `@hel
 3. **Missions, consent and three tokens:** how Alice approves the work, and how the PS decides each hop.
 4. **Call chaining:** how intermediaries pass authority on with `upstream_token`, and what they can't do.
 5. **Paying for it, and checking against a real person server:** billing without agent identity, and what a live run against Hellō's person server showed.
+
