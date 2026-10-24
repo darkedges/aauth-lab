@@ -48,6 +48,8 @@ const aauthFetch = createAAuthFetch({
   getKeyMaterial: () => createAgentToken({ agentUrl, personServerUrl: agent.personServerUrl }),
   personServerUrl: agent.personServerUrl,
   personServerMetadata: psMetadata,
+  // AAuth-Capabilities: this agent can send the person to an interaction URL (§11.7).
+  capabilities: ['interaction'],
   ...(flag('--prompt-consent') ? { prompt: 'consent' } : {}),
   onInteraction: (url, code) => console.log(`\nApprove in your browser: ${url}?code=${code}\nCode: ${code}\nWaiting for the person server…\n`),
 });
