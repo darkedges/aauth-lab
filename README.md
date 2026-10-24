@@ -1,6 +1,6 @@
 # Relay — AAuth network lab
 
-The [Relay Biscuit lab](../biscuit-trust-lab) rebuilt on [AAuth](https://datatracker.ietf.org/doc/html/draft-hardt-oauth-aauth-protocol). It has the same operators, scenarios, budget rules and UI. Biscuit attenuation is replaced by AAuth's signed HTTP requests, person-server tokens and call chaining. Signatures, tokens and HTTP exchanges are real. Operators, work and credits are simulated.
+The [Relay Biscuit lab](https://github.com/darkedges/biscuit-trust-lab) rebuilt on [AAuth](https://datatracker.ietf.org/doc/html/draft-hardt-oauth-aauth-protocol). It has the same operators, scenarios, budget rules and UI. Biscuit attenuation is replaced by AAuth's signed HTTP requests, person-server tokens and call chaining. Signatures, tokens and HTTP exchanges are real. Operators, work and credits are simulated.
 
 See **[COMPARISON.md](COMPARISON.md)** for a side-by-side analysis of the two solutions.
 
