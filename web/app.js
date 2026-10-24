@@ -30,7 +30,7 @@ lessonBox.append(lessonLabel, lessonSelect, lessonText); $('.controls .panel-hea
 lessonSelect.onchange = () => {
   const lesson = lessons[lessonSelect.value]; lessonText.textContent = lesson.text;
   if (lessonSelect.value === 'free') return;
-  $('#scenario').value = lesson.scenario; $('#budget').value = '100'; $('#requester').value = 'alice';
+  $('#scenario').value = lesson.scenario; $('#budget').value = '100'; $('#requester').value = 'alice'; $('#consent').value = lesson.consent ?? 'approve';
   edges = [['planner', 'research'], ['research', 'search'], ['planner', 'compute']];
   document.querySelectorAll('#accepts input').forEach(input => { input.checked = true; });
   if (lessonSelect.value === 'trust') edges = edges.filter(edge => edge[1] !== 'search');
@@ -57,7 +57,7 @@ $('#edge-to').value = 'research';
 $('#add-edge').onclick = () => { const from = $('#edge-from').value, to = $('#edge-to').value; if (from !== to && !edges.some(e => e[0] === from && e[1] === to)) { edges.push([from, to]); renderEdges(); markChanged(); } };
 function markChanged() { if (latest) { $('#run-status').textContent = 'Settings changed · run again'; $('#run-status').className = 'status-chip'; } }
 function scenarioChanged() { $('#scenario-description').textContent = descriptions[$('#scenario').value]; markChanged(); }
-$('#scenario').onchange = scenarioChanged; $('#budget').oninput = markChanged; $('#requester').onchange = markChanged;
+$('#scenario').onchange = scenarioChanged; $('#budget').oninput = markChanged; $('#requester').onchange = markChanged; $('#consent').onchange = markChanged;
 function switchTab(id) {
   if (id !== 'debug') debuggerView.collapse();
   document.querySelectorAll('[data-tab]').forEach(button => button.setAttribute('aria-selected', String(button.dataset.tab === id)));
@@ -212,7 +212,7 @@ document.querySelectorAll('.node[data-operator]').forEach(node => node.onclick =
 $('#run').onclick = async () => {
   if (!$('#budget').reportValidity()) return;
   const accepts = {}; for (const operator of Object.keys(names)) accepts[operator] = [...document.querySelectorAll(`#accepts input[data-operator="${operator}"]:checked`)].map(input => input.dataset.requester);
-  const config = { scenario: $('#scenario').value, budget: Number($('#budget').value), requester: $('#requester').value, edges, accepts };
+  const config = { scenario: $('#scenario').value, budget: Number($('#budget').value), requester: $('#requester').value, consent: $('#consent').value, edges, accepts };
   $('#run').disabled = true; $('#run').textContent = 'Signing & settling…'; $('#error').hidden = true;
   try { const result = await debuggerView.run(config); runHistory.unshift(result); runHistory = runHistory.slice(0, 10); render(result); }
   catch (error) { $('#error').textContent = error.message; $('#error').hidden = false; }

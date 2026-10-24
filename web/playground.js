@@ -95,6 +95,7 @@ export function renderComparison(target, current, previous) {
   const changes = [];
   if (current.scenario !== previous.scenario) changes.push(`Scenario: ${previous.scenario} → ${current.scenario}`);
   if (current.requester !== previous.requester) changes.push(`Requester: ${previous.requester} → ${current.requester}`);
+  if ((current.consent ?? 'approve') !== (previous.consent ?? 'approve')) changes.push(`Person at the PS: ${previous.consent ?? 'approve'} → ${current.consent ?? 'approve'}`);
   if (current.ledger.budget !== previous.ledger.budget) changes.push(`Budget: ${previous.ledger.budget} → ${current.ledger.budget} credits`);
   for (const [from, to] of previous.edges) if (!current.edges.some(edge => edge[0] === from && edge[1] === to)) changes.push(`Removed trust: ${names[from]} → ${names[to]}`);
   for (const [from, to] of current.edges) if (!previous.edges.some(edge => edge[0] === from && edge[1] === to)) changes.push(`Added trust: ${names[from]} → ${names[to]}`);
@@ -133,4 +134,5 @@ export const lessons = {
   budget: { label: '4. Separate permission from budget', scenario: 'overspend', text: 'Both 60-credit calls have permission. Only one reservation fits. Debug shows the denial at reserve, after authorization.' },
   retry: { label: '5. Retry without charging twice', scenario: 'retry', text: 'Follow both search attempts in Debug. The retry reuses the cached auth token (no PS call to SearchCo) and the reservation returns duplicate: true.' },
   failure: { label: '6. Release credits after failure', scenario: 'failure', text: 'Replay the search reservation and release. Reserved credits return to available without becoming a charge.' },
+  consent: { label: '7. The person declines the mission', scenario: 'happy', consent: 'decline', text: 'The PS answers the mission proposal with 202 and an interaction code. Alice opens it and declines, so the Assistant’s next poll gets 403 denied. Debug shows the proposal, both polls and Alice’s steps; no token is issued and nothing is charged.' },
 };
