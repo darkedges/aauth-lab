@@ -33,4 +33,6 @@ There is no `upstreamToken`, and the request body never carries `upstream_token`
 
 ## How we found it
 
-We built a multi-hop lab (agent → PlannerCo → ResearchCo → SearchCo) where every hop uses call chaining. Using the reference client for every agent, the person-token step worked through `requestPersonToken({ upstreamToken })`, but the auth-token step had to fall back to a hand-built request to include `upstream_token`.
+We built a multi-hop lab (agent → PlannerCo → ResearchCo → SearchCo) where every hop uses call chaining. Using the reference client for every agent, the person-token step works through `requestPersonToken({ upstreamToken })`, but the auth-token step can only call `exchangeToken` without `upstream_token`. The lab's person server accepts that (the parameter is OPTIONAL), but it then cannot run the §9.4.5 upstream checks at that step or cap the auth token's `exp` at the upstream token's (§9.4.1). `createAAuthFetch` has no upstream option either, so an intermediary has to compose the lower-level functions.
+
+_Corrected after filing: the original text said the test hand-built the auth-token request. See the follow-up comment on #37._
