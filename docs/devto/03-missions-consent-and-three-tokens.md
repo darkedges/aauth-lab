@@ -1,6 +1,6 @@
 ---
 title: 'Missions, consent and three tokens: how the AAuth person server decides'
-published: false
+published: true
 devto: true
 description: >-
   How Alice approves the work once at her person server, and how person tokens,
