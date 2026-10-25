@@ -3,13 +3,14 @@ title: 'Call chaining in AAuth: passing authority on with upstream tokens'
 published: true
 devto: true
 description: >-
-  How an AAuth intermediary hands work to the next company: upstream_token,
-  what the person server verifies, why every hop gets a new identifier for the
+  How an AAuth intermediary hands work to the next company: upstream_token, what
+  the person server verifies, why every hop gets a new identifier for the
   person, and what an intermediary can't do.
 tags: 'security, authorization, oauth, distributedsystems'
 series: AAuth Network Lab
 cover_image: >-
   https://raw.githubusercontent.com/darkedges/aauth-lab/main/docs/playground-screenshot.png
+devto_id: 4914520
 ---
 
 Part 3 followed one hop: the Assistant calling PlannerCo with tokens from Alice's person server. But PlannerCo doesn't do the research itself. It hands it to ResearchCo, which hands the search to SearchCo. This part covers how authority travels down that chain.
