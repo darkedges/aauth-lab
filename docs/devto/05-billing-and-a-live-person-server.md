@@ -1,6 +1,6 @@
 ---
 title: 'Paying for it, and checking AAuth against a real person server'
-published: false
+published: true
 devto: true
 description: >-
   How the lab's clearinghouse bills the right company when AAuth tokens don't
