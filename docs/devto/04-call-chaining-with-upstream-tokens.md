@@ -1,6 +1,6 @@
 ---
 title: 'Call chaining in AAuth: passing authority on with upstream tokens'
-published: false
+published: true
 devto: true
 description: >-
   How an AAuth intermediary hands work to the next company: upstream_token,
