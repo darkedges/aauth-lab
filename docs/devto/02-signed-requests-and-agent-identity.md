@@ -1,6 +1,6 @@
 ---
 title: 'Signed requests and agent identity in AAuth'
-published: false
+published: true
 devto: true
 description: >-
   How an AAuth agent proves who it is on every HTTP request: RFC 9421
