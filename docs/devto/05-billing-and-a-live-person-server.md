@@ -10,6 +10,7 @@ tags: 'security, authorization, javascript, cloudflare'
 series: AAuth Network Lab
 cover_image: >-
   https://raw.githubusercontent.com/darkedges/aauth-lab/main/docs/playground-screenshot.png
+devto_id: 4914514
 ---
 
 The first four parts covered authority: who is calling, on whose behalf, and who decides. This last part covers money, and then checks the whole thing against the real world.
