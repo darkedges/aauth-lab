@@ -10,6 +10,7 @@ tags: 'security, authorization, oauth, javascript'
 series: AAuth Network Lab
 cover_image: >-
   https://raw.githubusercontent.com/darkedges/aauth-lab/main/docs/playground-screenshot.png
+devto_id: 4914522
 ---
 
 Part 2 ended with SearchCo answering `401 requirement=person-token`: it knows which agent is calling, and now wants to know who for. This part covers the rest of a hop, and the mission that every decision is checked against.
