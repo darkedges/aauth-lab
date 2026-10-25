@@ -1,5 +1,5 @@
 ---
-title: 'Signed requests and agent identity in AAuth'
+title: Signed requests and agent identity in AAuth
 published: true
 devto: true
 description: >-
@@ -10,6 +10,7 @@ tags: 'security, authorization, javascript, http'
 series: AAuth Network Lab
 cover_image: >-
   https://raw.githubusercontent.com/darkedges/aauth-lab/main/docs/playground-screenshot.png
+devto_id: 4914508
 ---
 
 Part 1 introduced the network and the five steps of a hop. This part covers the first step and the thing every later step depends on: how an agent proves who it is.
